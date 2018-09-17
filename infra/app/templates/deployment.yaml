@@ -30,6 +30,8 @@ spec:
               value: prod
             - name: APP_SECRET
               value: 5c7828c4eaa35d2665366d281acb2793
+            - name: MESSENGER_TRANSPORT_DSN
+              value: 'amqp://user:user@rabbitmq:5672/%2f/messages'
         - name: nginx
           image: "nginx:stable"
           imagePullPolicy: IfNotPresent
