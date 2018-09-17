@@ -5,6 +5,10 @@ cd lolilol
 mkdir lolilol && cd lolilol
 
 
+docker build --target prod -t alexdpy/lolilol .
+docker push alexdpy/lolilol
+
+
 helm create lolilol
 
 
@@ -22,4 +26,6 @@ kns lolilol
 
 helm upgrade -i --namespace lolilol -f infra/app/values.yaml lolilol infra/app
 
+
+helm install --namespace lolilol -f infra/rabbitmq/values.yaml --name rabbitmq stable/rabbitmq
 ```
